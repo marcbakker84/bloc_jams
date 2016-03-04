@@ -8,4 +8,5 @@ var forEach = function(array, callback) {
   }
 };
 
+
 //why is there also 'callback' passed into the function??????
