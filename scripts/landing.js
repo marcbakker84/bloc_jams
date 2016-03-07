@@ -1,4 +1,4 @@
-var pointsArray = document.getElementsByClassName('.point');
+/*var pointsArray = document.getElementsByClassName('.point');
 
 var revealPoint = function(point) {
     point.style.opacity = 1;
@@ -11,13 +11,13 @@ var animatePoints = function(points) {
     forEach(points,revealPoint)
 }
 
-/*
+
 var animatePoints = function(points) {
     pointsArray.forEach(points)
 
 Ok, if you don't want to use a fake for each function, as made in utilities, than i would expect the above to work. However, it does not. Why? And how to implement a real forEach function in this case?g
     
-}*/
+}
 
 window.onload = function() {
     if (window.innerHeight > 950) {
@@ -34,9 +34,9 @@ window.onload = function() {
              pointsArray.forEach(animatePoints);
          }     
      });
- }
+ }*/
 
-/*Old solution
+//Old solution
 
 var pointsArray = document.querySelectorAll('.point');
 
