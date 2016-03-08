@@ -28,6 +28,27 @@ var albumPicasso = {
      ]
  };
 
+var albumEddieVedder = {
+     title: 'Into the Wild',
+     artist: 'Eddie Vedder',
+     label: 'Sony',
+     year: '2007',
+     albumArtUrl: 'assets/images/album_covers/12.png',
+     songs: [
+         { title: 'Setting forth', duration: '1:01' },
+         { title: 'No ceiling', duration: '5:01' },
+         { title: 'Far behind', duration: '3:21'},
+         { title: 'Rise', duration: '3:14' },
+         { title: 'Long nights', duration: '2:15'},
+         { title: 'Tuolumne', duration: '1:01' },
+         { title: 'Hard sun', duration: '5:01' },
+         { title: 'Society', duration: '3:21'},
+         { title: 'The wolf', duration: '3:14' },
+         { title: 'End of the road', duration: '2:15'},
+         { title: 'Guarenteed', duration: '3:21'}
+     ]
+ };
+
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -62,7 +83,24 @@ var setCurrentAlbum = function(album) {
          albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
      }
  };
- 
- window.onload = function() {
+
+/*window.onload = function() {
      setCurrentAlbum(albumPicasso);
  };
+*/
+
+window.onload = function() {
+    var albumCounter = 0
+
+    document.getElementsByClassName("album-cover-art")[0].addEventListener('click', function (e) {        
+        
+        var allAlbums = [albumPicasso, albumMarconi, albumEddieVedder]
+        setCurrentAlbum(allAlbums[albumCounter]);           
+        
+        if (albumCounter < (allAlbums.length-1))  {
+                albumCounter += 1;
+            } else if (albumCounter >= (allAlbums.length-1)) {
+                albumCounter = 0;
+            }            
+        }); 
+};
