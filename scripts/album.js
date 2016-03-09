@@ -70,15 +70,34 @@ var setCurrentAlbum = function(album) {
 window.onload = function() {
      setCurrentAlbum(albumPicasso);
    
-    var findParentByClassName = function(element, targetClass) {
-        if (element) {
+    var findParentByClassName = function(element, targetClass) {       
+        if (element.parentElement.length<1) {
+            alert("No parent found");
+        } 
+        else {
             var currentParent = element.parentElement;
-            while (currentParent.className != targetClass) {
+            
+          while (currentParent.className != targetClass) {
+                if (element.parentElement.length<1) {
+                  alert("No parent found with that class name");
+                } else {
                 currentParent = currentParent.parentElement;
             }
             return currentParent;
-        }
-    }
+          }
+          }
+    };
+
+//Pseudo code of above
+//A function with name findParentByClassName takes in an element and a targetclass (the class of the parent).
+//If the parent of the element has a name shorter than 1 charachter, there seems to be no parent. Then alert "No parent found". 
+//Else declare a new variable currentParent and assign element.parentElement.
+//Check with a while loop if currentParent.classname is not equal to targetClass
+//When true check if the parent of the element has a name shorter than 1 character.
+//When true alert "No parent found with that class name"
+//Else assign currentParent.parentElement (and check again in while loop)
+//When the while loop is false (currentParent.className == targetClass) return currentParent
+//The end.
 
     var getSongItem = function(element) {
         switch (element.className) {
