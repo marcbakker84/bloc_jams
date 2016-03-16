@@ -90,17 +90,24 @@ var setCurrentAlbum = function(album) {
 */
 
 window.onload = function() {
-    var albumCounter = 0
-
+    var albumCounter = 1
+    setCurrentAlbum(albumPicasso);
     document.getElementsByClassName("album-cover-art")[0].addEventListener('click', function (e) {        
-        
         var allAlbums = [albumPicasso, albumMarconi, albumEddieVedder]
         setCurrentAlbum(allAlbums[albumCounter]);           
-        
         if (albumCounter < (allAlbums.length-1))  {
-                albumCounter += 1;
+                albumCounter++;
             } else if (albumCounter >= (allAlbums.length-1)) {
                 albumCounter = 0;
             }            
         }); 
 };
+
+$(document).ready(function{
+    var albumCounter = 0;
+    $(".album-cover-art").click(function(){
+        if(albumcounter<all.Albums.length-1) {
+            albumCounter +=1
+        } else if (albumCounter >- (allAlbums.length-1))
+    })
+})*/
